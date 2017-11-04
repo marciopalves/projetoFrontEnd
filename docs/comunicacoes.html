@@ -1,0 +1,82 @@
+<html>
+
+<head>
+    <title>Trabalho Front</title>
+    <meta charset="utf-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="spa.js"></script>
+    <script src="funcoes.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+
+    <div class="container well well-nm col-sm-9">
+        <h2>Comunicação Eletrônica do Indivíduo</h2>
+        <form method="post" class="form-group" id="form" name="form">
+                <div class="panel panel-info" id="idComunicacoes">
+                        <div class="panel-heading">Comunicação Eletrônica do Indivíduo</div>
+                        <div class="panel-body">
+
+                                <div class="row" id="comunicacoes">
+                                        <div class="form-group col-md-3">
+                                                <label for="comunicacoes">Meio de Comunicação</label>
+                                                <select type="text" class="form-control" id="txtMeioComunicacoes" name="MeioComunicacoes" data-toggle="tooltip" title="Meio de Comunicação">
+                                                    <option value="1">Telefone (Excluindo Celular)</option>
+                                                    <option value="2">Telefone Celular</option>
+                                                    <option value="3">Fax</option>
+                                                    <option value="4">Pager</option>
+                                                    <option value="5">Correio Eletrônico</option>
+                                                    <option value="6">URL</option>
+                                                    <option value="8">Outro</option>
+                                                
+                                                </select>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                                <label for="preferenciaContato">Preferência do Contato Eletrônico</label>
+                                                <select type="text" class="form-control" id="txtPreferenciaContato" name="PreferenciaContato" data-toggle="tooltip" title="Preferência para Contato">
+                                                    <option value="B">Horário Comercial</option>
+                                                    <option value="D">Durante o Dia</option>
+                                                    <option value="W">Finais de Semana</option>
+                                                    <option value="A">Qualquer hora</option>
+                                                    <option value="E">Período Noturno</option>
+                                                    
+                                                </select>
+                                        </div>
+
+                                        <div class="form-group col-md-4">
+                                                <label for="codUtilContato">Código de Utilização do Contato</label>
+                                                <select class="form-control" id="txtCodUtilContato" name="CodUtilContato" data-toggle="tooltip"
+                                                                title="Código de utilização do contato">
+                                                    <option value="1">Comercial</option>
+                                                    <option value="2">Pessoal</option>
+                                                    <option value="3">Tanto Comercial quanto pessoal</option>
+                                                    
+                                                </select>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                                <label for="detalhesComEletronica">Detalhes da Comunicação Eletrônica</label>
+                                                <input type="text" class="form-control" id="txtDetalhesComEletronica" name="DetalhesComEletronica" data-toggle="tooltip"
+                                                                title="Detalhes da Comunicação Eletrônica">
+                                                    
+                                        </div>
+                                        
+                                        
+                                </div>
+                        </div>
+                </div>
+            
+        </form>
+    </div>
+
+
+</body>
+
+</html>

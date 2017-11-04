@@ -1,0 +1,69 @@
+<html>
+
+<head>
+        <title>Trabalho Front</title>
+        <meta charset="utf-8">
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="spa.js"></script>
+        <script src="funcoes.js"></script>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+
+<body>
+        <div class="container well well-nm col-sm-9">
+                <h2>Vínculo</h2>
+                <form method="post" class="form-group" id="form" name="form">
+                        <div class="panel panel-info" id="idVinclo">
+                                <div class="panel-heading">Vínculo</div>
+                                <div class="panel-body">
+
+                                        <div class="row" id="vinculoInd">
+                                                <div class="form-group col-md-3">
+                                                        <label for="vinculoInd">Vínculo do Indivíduo</label>
+                                                        <input type="text" class="form-control" id="txtVinculoInd" name="VinculoInd" data-toggle="tooltip" title="Vínculo do Indivíduo">
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                        <label for="indicadorInd">Indicador do Indivíduo</label>
+                                                        <input type="text" class="form-control" id="txtIdentificadorInd" name="IndentificadorInd" data-toggle="tooltip"
+                                                                title="Indentificador do Indivíduo">
+                                                </div>
+                                                <div class="form-group col-md-6">
+                                                        <label for="relDoVinculoInd">Relacionamento do Vínculo do Indivíduo</label>
+                                                        <select class="form-control" id="txtRelDoVinculoInd" name="RelDoVinculoInd" data-toggle="tooltip"
+                                                                title="Relacionamento do Vínculo do Indivíduo">
+                                                                <option value="pai">Pai</option>
+                                                                <option value="mae">Mãe</option>
+                                                                <option value="irmao">Irmão</option>
+                                                                <option value="tio">Tio</option>
+                                                                <option value="tia">Tia</option>
+                                                                <option value="primos">Primos</option>
+                                                                <option value="avos">Avô/Avó</option>
+                                                                <option value="enteada">Enteada(o)</option>
+
+                                                        </select>
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                                <label for="dtInicialVinculo">Data Inicial do Vínculo</label>
+                                                                <input type="date" class="form-control" id="txtDtInicialVinculo" name="DtInicialVinculo" data-toggle="tooltip"
+                                                                        title="Data Inicial do Vínculo">
+                                                </div>
+                                                <div class="form-group col-md-3">
+                                                                <label for="dtFinalVinculo">Data Final do Vínculo</label>
+                                                                <input type="date" class="form-control" id="txtDtFinalVinculo" name="DtFinalVinculo" data-toggle="tooltip"
+                                                                        title="Data Final do Vínculo">
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                </form>
+        </div>
+</body>
+
+</html>

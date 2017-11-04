@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Trabalho Front</title>
+  <meta charset="utf-8">
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script src="bootstrap3/js/jquery.validate.js" type="text/javascript"></script>
+  <script src="spa.js"></script>
+  <script type="text/javascript">
+    $(document).ready(function () {
+      $("#form").validate({
+        // Define as regras
+        rules: {
+          DesignacaoDoIndividuo: {
+            // campoDesignaçãoDoIndivíduo será obrigatório (required) e terá tamanho mínimo (minLength)
+            required: true, minlength: 1
+          },
+          DtEmissaoDocumento: {
+            // DtEmissaoDocumento será uma data válida
+            required: true, date: true
+          },
+          campoEmail: {
+            // campoEmail será obrigatório (required) e precisará ser um e-mail válido (email)
+            required: true, email: true
+          },
+          campoMensagem: {
+            // campoMensagem será obrigatório (required) e terá tamanho mínimo (minLength)
+            required: true, minlength: 2
+          }
+        },
+        // Define as mensagens de erro para cada regra
+        messages: {
+          DesignacaoDoIndividuo: {
+            required: "Digite a Designação do Indivíduo",
+            minLength: "O seu nome deve conter, no mínimo, 1 caracteres"
+          },
+          DtEmissaoDocumento: {
+            required: "Digite a data de emissão do documento",
+            date: "Informe uma data válida"
+
+          },
+          campoEmail: {
+            required: "Digite o seu e-mail para contato",
+            email: "Digite um e-mail válido"
+          },
+          campoMensagem: {
+            required: "Digite a sua mensagem",
+            minLength: "A sua mensagem deve conter, no mínimo, 2 caracteres"
+          }
+        }
+      });
+    });
+  </script>
+
+
+<script type="text/javascript">
+                if ($("txtTipoIdentificador").blur(function () {
+                        alert("passou aqui");
+                }
+
+
+                ));
+        </script>
+
+  <style>
+    * {
+      font-family: Verdana;
+      font-size: 100%;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+    }
+
+    label.error {
+      float: none;
+      color: red;
+      margin: 0 .5em 0 0;
+      vertical-align: top;
+      font-size: 10px
+    }
+
+    p {
+      clear: both;
+    }
+
+    .submit {
+      margin-top: 1em;
+    }
+
+    em {
+      font-weight: bold;
+      padding-right: 1em;
+      vertical-align: top;
+    }
+  </style>
+  <script src="funcoes.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+
+    .row.content {
+      height: 1500px
+    }
+    /* Set gray background color and 100% height */
+
+    .sidenav {
+      background-color: black;
+      color: white;
+      height: 100%;
+    }
+    /* Set black background color, white text and some padding */
+
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    /* On small screens, set height to 'auto' for sidenav and grid */
+
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {
+        height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body ng-app="App">
+  <div class="row content">
+    <div class="col-sm-2 sidenav">
+      <h4>Menu</h4>
+      <ul class="nav nav-pills nav-stacked">
+        <li><a href="#/"><span class="glyphicon glyphicon-home"></span> Home</a></li>
+        <li><a href="#identificador"><span class="glyphicon glyphicon-user"></span> Identificador</a></li>
+        <li><a href="#nome"><span class="glyphicon glyphicon-text-width"> Nome</a></li>
+        <li><a href="#dadosDemograficos"><span class="glyphicon glyphicon-globe"></span> Dados Demográficos</a></li>
+        <li><a href="#endereco"><span class="glyphicon glyphicon-list-alt"> Endereço</a></li>
+        <li><a href="#comunicacoes"><span class="glyphicon glyphicon-phone-alt"> Comunicações</a></li>
+        <li><a href="#vinculo"><span class="glyphicon glyphicon-retweet"></span> Vínculo</a></li>
+      </ul><br>
+    </div>
+
+
+
+    <div ng-view class="container-fluid col-md-9"></div>
+
+</body>
+
+</html>

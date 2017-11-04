@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Trabalho Front</title>
+    <meta charset="utf-8">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <!-- Latest compiled JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script src="spa.js"></script>
+    <script src="funcoes.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/index.css">
+    <script type="text/javascript">
+        $(document).ready(function(){
+                $("input").blur(function(){
+                 if($(this).val() == "")
+                     {
+                         $(this).css({"border" : "1px solid #F00", "padding": "2px"});
+                     }
+                });
+                $("#salvar").click(function(){
+                 var cont = 0;
+                 $("#form input").each(function(){
+                     if($(this).val() == "")
+                         {
+                             $(this).css({"border" : "1px solid #F00", "padding": "2px"});
+                             cont++;
+                         }
+                    });
+                 if(cont == 0)
+                     {
+                         $("#form").submit();
+                     }
+                });
+            });
+            
+            
+            
+</script>
+</head>
+
+<body>
+
+    <div class="container well well-nm col-sm-10">
+
+        <div class="panel panel-info">
+            <div class="panel-heading">Cadastro</div>
+            <div class="panel-body">
+                Nome: <input type="text" id="nome" /><br>
+                <br> Idade: <input type="number" id="idade" /><br>
+                <br>
+            </div>
+        </div>
+
+
+
+
+
+        <button class="btn-default" onclick="salvarPessoa()">Salvar</button>
+        <!--<button> <a href="#pagina2">Cadastrar</a></button>-->
+
+        <button class="btn-default" onclick="lerTodasPessoas()">Listar</button>
+        <br>
+        <span id="mensagem2"></span>
+        <br>
+        <div class="container">
+            <div class="table-responsive">
+                <table class="table table-hover">
+                    <thead>
+                        <tr>
+                            <th class="col-md-1 info">#ID</th>
+                            <th class="col-md-6 info">Nome</th>
+                            <th class="col-md-1 info">Idade</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tabela-pacientes">
+                        <tr class="paciente"></tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+
+
+</html>

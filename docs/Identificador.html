@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+        <title>Trabalho Front</title>
+        <meta charset="utf-8"></meta>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-route.js"></script>
+        <!-- Latest compiled and minified CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"></link>
+        <!-- jQuery library -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+        <!-- Latest compiled JavaScript -->
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="../bootstrap3/js/jquery.validate" type="text/javascript"></script>
+        <script src="spa.js"></script>
+        <script src="funcoes.js"></script>
+
+
+
+</head>
+
+<body ng-app="App">
+
+        <div class="container well well-nm col-sm-12">
+                <h2>Formulário de Identificação de Indivíduo</h2>
+                <form method="post" class="form-group" id="form" name="form">
+                        <div class="row" id="idIndividuo">
+                                <div class="form-group col-md-4">
+                                        <label for="txtDesignacaoDoIndividuo">Designação do Identificador do Indivíduo</label>
+                                        <input type="text" class="form-control" id="txtDesignacaoDoIndividuo" name="DesignacaoDoIndividuo" data-toggle="tooltip"
+                                                title=" Número ou código atribuído a uma pessoa por uma organização">
+                                </div>
+                        </div>
+                        <div class="row">
+                                <div class="form-group col-md-2">
+                                        <label for="txtAreaDoIndentificador">Área Geográfica do identificador do Indivíduo</label>
+                                        <div><select class="form-control form-control-lg" id="txtAreaDoIdentificador" data-toggle="tooltip"
+                                                        title="Código que representa a área geográfica na qual o identificador é utilizado">
+                                                        <option value="1">(L) Sujeito Local</option>
+                                                        <option value="2">(A) Área, Região ou Distrito</option>
+                                                        <option value="3">(E) Estado, Província ou Território</option>
+                                                        <option value="4">(N) Nacional</option>
+                                                    </select></div>
+                                </div>
+                        </div>
+                        <div class="row">
+                                <div class="form-group col-md-5">
+                                        <label for="txtEmissorDoIndentificador">Emissor do identificador do Indivíduo</label>
+                                        <div><input type="text" class="form-control" id="txtEmissorDoIndentificador" name="EmissorDoIdentificador"
+                                                        data-toggle="tooltip" title="Emissor do Indentificador"></div>
+                                </div>
+                        </div>
+                        <div class="row">
+                                <div class="form-group col-md-2">
+                                        <label for="txtDtEmissaoDocumento">Data de Emissão do Documento</label>
+                                        <div><input type="date" class="form-control" id="txtDtEmissaoDocumento" name="DtEmissaoDocumento"
+                                                        data-toggle="tooltip" title="A data na qual foi emitido o documento de identificação do indivíduo"></div>
+                                </div>
+                        </div>
+                        <div class="row">
+                                <div class="form-group col-md-4">
+                                        <label for="txtTipoIdentificador">Tipo de Identificador</label>
+                                        <select class="form-control form-control-lg" id="txtTipoIdentificador" name="TipoIdentificador" data-toggle="tooltip" title="Código que identifica o tipo de identificador">
+                                                <option value="carteiraTrab">Carteira de Trabalho e Previdência Social</option>
+                                                <option value="certidaoNasc" selected>Certidão de Nascimento</option>
+                                                <option value="tituloEleitor">Título de Eleitor</option>
+                                
+                                        </select>
+                                </div>
+                        </div>
+                        <div class="panel panel-info" id="idCertidao">
+                                <div class="panel-heading">Certidão de Nascimento/Casamento/divórcio(Opcional)</div>
+                                <div class="panel-body">
+                                        <div>
+                                                <div class="form-group col-md-6">
+                                                        <label for="txtNomeCartorio">Nome do Cartório</label>
+                                                        <div><input type="text" class="form-control" id="txtNomeCartorio" name="NomeCartorio"
+                                                                        data-toggle="tooltip" title="O nome do cartório que emitiu a certidão de nascimento, casamento ou divórcio"></div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="form-group col-md-2">
+                                                        <label for="txtlivro">Livro</label>
+                                                        <div><input type="text" class="form-control" id="txtLivro" name="Livro"
+                                                                        data-toggle="tooltip" title="Número do livro no qual foi feito o registro da certidão no cartório"></div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="form-group col-md-2">
+                                                        <label for="txtFolha">Folha</label>
+                                                        <div><input type="text" class="form-control" id="txtFolha" name="Folha"
+                                                                        data-toggle="tooltip" title="Número da folha do livro no qual foi feito o registro da certidão no cartório"></div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="form-group col-md-2">
+                                                        <label for="txtTermo">Termo</label>
+                                                        <div><input type="text" class="form-control" id="txtTermo" name="Termo"
+                                                                        data-toggle="tooltip" title="Número da certidão constante no livro no qual foi lavrada a certidão no cartório"></div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="panel panel-info" id="idCarteira">
+                                <div class="panel-heading">Carteira de Trabalho(Opcional)</div>
+                                <div class="panel-body">
+                                        <div>
+                                                <div class="form-group col-md-2">
+                                                        <label for="txtSerie">Série</label>
+                                                        <div><input type="text" class="form-control" id="txtSerie" name="Serie"
+                                                                        data-toggle="tooltip" title="Número da série da CTPS"></div>
+                                                </div>
+                                        </div>
+
+                                        <div>
+                                                <div class="form-group col-md-4">
+                                                        <label for="txtEstado">Estado</label>
+                                                        <div>
+                                                        <select class="form-control form-control-lg" id="txtEstado" name="Estado" data-toggle="tooltip" title="Código do estado onde foi emitida a carteira de trabalho">
+                                                        <option value="AC">Acre</option>
+                                                        <option value="AL">Alagoas</option>
+                                                        <option value="AP">Amapá</option>
+                                                        <option value="AM">Amazonas</option>
+                                                        <option value="BA">Bahia</option>
+                                                        <option value="CE">Ceará</option>
+                                                        <option value="DF">Distrito Federal</option>
+                                                        <option value="ES">Espírito Santo</option>
+                                                        <option value="GO">Goiás</option>
+                                                        <option value="MA">Maranhão</option>
+                                                        <option value="MT">Mato Grosso</option>
+                                                        <option value="MS">Mato Grosso do Sul</option>
+                                                        <option value="MG">Minas Gerais</option>
+                                                        <option value="PA">Pará</option>
+                                                        <option value="PB">Paraíba</option>
+                                                        <option value="PR">Paraná</option>
+                                                        <option value="PE">Pernambuco</option>
+                                                        <option value="PI">Piauí</option>
+                                                        <option value="RJ">Rio de Janeiro</option>
+                                                        <option value="RN">Rio Grande do Norte</option>
+                                                        <option value="RS">Rio Grande do Sul</option>
+                                                        <option value="RO">Rondônia</option>
+                                                        <option value="RR">Roraima</option>
+                                                        <option value="SC">Santa Catarina</option>
+                                                        <option value="SP">São Paulo</option>
+                                                        <option value="SE">Sergipe</option>
+                                                        <option value="TO">Tocantins</option>
+                                        </select>
+                                                        </div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+                        <div class="panel panel-info" id="idTitEleitor">
+                                <div class="panel-heading">Título de Eleitor(Opcional)</div>
+                                <div class="panel-body">
+                                        <div>
+                                                <div class="form-group col-md-6">
+                                                        <label for="txtTitSessaoEleitoral">Sessão Eleitoral</label>
+                                                        <div><input type="text" class="form-control" id="txtSessaoEleitoral" name="TitSessaoEleitoral"
+                                                                data-toggle="tooltip" title="Número da seção eleitoral do título de eleitor"></div>
+                                                </div>
+                                        </div>
+                                        <div>
+                                                <div class="form-group col-md-6">
+                                                        <label for="txtZona">Zona Eleitoral</label>
+                                                        <div><input type="text" class="form-control" id="txtZona" name="Zona" data-toggle="tooltip" title="Número da zona eleitoral do título de eleitor"></div>
+                                                </div>
+                                        </div>
+                                </div>
+                        </div>
+
+
+                        <div class="col-md-12"><button class="btn-primary" value="enviar" id="salvar">Salvar</button></div>
+                </form>
+        </div>
+
+</body>
+
+</html>
